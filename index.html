@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <title>Nellie Johnsson jQuery</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Nellie Johnsson" />
+    <!--Main Stylesheet-->
+    <link href="main.css" rel="stylesheet" type="text/css" />
+    <!--Google Fonts: Abril Fatface, Lato-->
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&family=Krona+One&display=swap" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/a960e09b87.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+        var talk = [],
+            count = 0;
+        talk[0] = "Oh, Hello! It's George and Gil, your favourite guys in the world. Have you always wished to get to know us better?";
+        talk[1] = "We'll interpret that as a yes. Lucky you!";
+        talk[2] = "WHAT IS IT?!? Oh right. Some of our accolades: We are the recipients of a 1997 restraining order";
+        talk[3] = "But who are we really, you know? What is our essence? How to describe the kind of vibe we give off";
+        talk[4] = "You know when you walk by a travel agency and you're like -What?!?";
+        talk[5] = "Well there you go!";
+        talk[6] = "Now we know it's been a wonderful honor for you to spend this precious time in our company, and you're very welcome.";
+
+
+        $(document).ready(function() {
+            //Increase size of spider icon slightly when hovered over
+            //Decrease back to normal after hover
+            $(".fa-spider").hover(function() {
+                $(this).css("font-size", "1.65rem");
+            }, function() {
+                $(this).css("font-size", "1.5rem");
+            });
+
+            //When spider is clicked, -toggle <p>, -animate spider to move up,
+            // -animate spider thread to decrease in length
+            $(".fa-spider").click(function() {
+
+                //display all <p> in the aside section, every other <p> in italics
+                $(".white-space__not").toggle(700), $(".white-space__not:even").css("font-style", "italic");
+
+                if ($(this).hasClass("animated")) {
+                    (this).animate({
+                            top: '-7px'
+                        }, {
+                            duration: 800,
+                            queue: false
+                        }),
+                        $(".fa-spider--spin").animate({
+                            height: '85px'
+                        }, {
+                            duration: 800,
+                            queue: false
+                        });
+
+                } else {
+                    $(this).animate({
+                            top: '-10px'
+                        }, {
+                            duration: 800,
+                            queue: false
+                        }),
+                        $(".fa-spider--spin").animate({
+                            height: '30px'
+                        }, {
+                            duration: 800,
+                            queue: false
+                        });
+                }
+
+                //animate back to original state when animated class has been toggled
+                $(this).toggleClass("animated");
+            });
+
+
+            //When hovering over boxes, add class to shadow and change 
+            //saturation on box color
+            $(".squares__item").hover(function() {
+                    $(this).addClass("shadow");
+                },
+                function() {
+                    $(this).removeClass("shadow");
+                });
+
+            //When one of the boxes is clicked, display messages from array
+            //in order on the clicked box. Remove the last message
+            $(".squares__item").click(function() {
+                if (count === 0) {
+                    $(this).html("<p></p>"), $(".squares__item > p").addClass("squares__talk").append(talk[0]);
+                } else if (count > 0 && count < talk.length) {
+                    $(".squares__talk").remove().appendTo(this).html(talk[count]);
+                } else if (count === talk.length) {
+                    $(".squares__talk").remove().appendTo(this).html("SHOW'S OVER! Now go bask in our former glory " + "<a href>Geniuses</a>"),
+                        $("p > a").attr("href", "https://www.theguardian.com/stage/2016/oct/10/oh-hello-on-broadway-review-nick-kroll-john-mulaney");
+                }
+                count++;
+            });
+        });
+
+    </script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <h1><a class="logo" href="index.html">HI, HELLO!</a></h1>
+            <h2>Not Yet Back on Br'dway</h2>
+        </header>
+        <!--===== END HEADER =====-->
+        <main>
+            <aside class="white-space">
+                <div class="fa-spider--spin"></div>
+                <i class="fas fa-spider"></i>
+                <p class="white-space__not">- Oh, look! We've got a visitor!</p>
+                <p class="white-space__not">- What the ..Oh, it's just a spider. For a minute there I thought it was a radioactive pig coming to see us</p>
+                <p class="white-space__not">- Well there is quite a striking resemblance, I'll give you that.</p>
+                <p class="white-space__not">- Yeah. Hey, what's up with all of this unused space anyway?</p>
+                <p class="white-space__not">- Speakers' corner?</p>
+            </aside>
+
+            <section class="squares">
+                <div class="squares__item">
+                </div>
+                <div class="squares__item">
+                </div>
+                <div class="squares__item">
+                </div>
+                <div class="squares__item">
+                </div>
+                <div class="squares__item">
+                </div>
+                <div class="squares__item">
+                </div>
+                <div class="squares__item">
+                </div>
+                <div class="squares__item">
+                </div>
+                <div class="squares__item">
+                </div>
+            </section>
+        </main>
+        <!--======= END MAIN =======-->
+
+        <footer>
+            <div class="footer-info">
+                <ul>
+                    <li class="footer-info__list">Charmed I'm Sure Productions</li>
+                    <li class="footer-info__list">Gil Faizon &amp; George St. Geegland</li>
+                </ul>
+            </div>
+        </footer>
+        <!--====== END FOOTER ======-->
+    </div>
+    <!--======== END WRAPPER ========-->
+
+</body>
+
+</html>

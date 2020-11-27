@@ -1,0 +1,343 @@
+/* Huvudstilmall jQuery examination */
+
+/*------------------Meyer Reset-------------------*/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/*-------------------Custom Styles--------------------*/
+
+body {
+    background-color: #c4ad87;
+    font-family: 'Fira Mono', monospace;
+    color: #1d4019;
+}
+
+.wrapper {
+    margin: 0 auto;
+}
+
+header {
+    height: 260px;
+}
+
+h1,
+h2 {
+    font-family: 'Krona One', sans-serif;
+    font-weight: bold;
+    margin-left: 37%;
+}
+
+h1 {
+    padding-top: 150px;
+    margin-bottom: .5rem;
+}
+
+.logo {
+    font-size: 3.85rem;
+    color: aliceblue;
+}
+
+h2 {
+    font-size: 1.65rem;
+}
+
+p {
+    margin: 1rem;
+    line-height: 1.15;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 5%;
+}
+
+.white-space {
+    flex: 30%;
+}
+
+.white-space__not {
+    margin: 5% 3%;
+    display: none;
+}
+
+.fa-spider--spin {
+    width: .75rem;
+    height: 85px;
+    margin: 6%;
+    margin-bottom: 0px;
+    border-right: 2px solid white;
+}
+
+.fa-spider {
+    position: relative;
+    font-size: 1.5rem;
+    margin: 6%;
+    margin-top: -5px;
+}
+
+.squares {
+    flex: 65%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.squares__item {
+    background-color: #c4bcaf;
+    width: 30%;
+    height: 190px;
+    margin: 2.5% 0 0 2%;
+}
+
+.squares__talk {
+    font-weight: 500;
+}
+
+.squares__talk a {
+    line-height: 2;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #1d4019;
+}
+
+.squares__talk a:hover {
+    color: aliceblue;
+}
+
+footer {
+    height: 200px;
+    margin: 2.5%;
+}
+
+.footer-info {
+    padding-top: 120px;
+    text-align: center;
+    line-height: 1.75;
+    font-size: .75rem;
+    font-weight: 700;
+}
+
+.shadow {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    background-color: #c4c4c2;
+}
+
+/* Responsive styles */
+/* 5.C Max 1200px screen */
+@media only screen and (max-width: 1200px) {
+    main {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0 1.5%;
+    }
+
+    .white-space {
+        flex: 13%;
+    }
+
+}
+
+
+/* 5.C Max 800px screen */
+@media only screen and (max-width: 800px) {
+     h1,
+    h2 {
+        margin: 0 3% .5rem 6.5%;
+    }
+    
+    .squares {
+        width: 96%;
+        margin: 0 4%;
+    }
+
+    .squares__item {
+        width: 45%;
+        margin: 2% 1.75%;
+    }
+
+    .white-space {
+        order: 2;
+        flex: 98%;
+        height: 260px;
+    }
+
+    .white-space__not {
+        margin: 1.9% 7%;
+    }
+}
+
+
+/* 5.C Max 485px screen */
+@media only screen and (max-width: 485px) {
+    h1,
+    h2 {
+        text-align: center;
+        margin: 0 2% .5rem 3%;
+    }
+
+    h1 {
+        padding-top: 100px;
+    }
+    
+    .logo {
+        font-size: 2.4rem;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    .squares__item {
+        height: 130px;
+        width: 90%;
+        margin: 3% 5%;
+    }
+
+    .squares__talk {
+        overflow: hidden;
+        font-size: .85rem;
+    }
+    
+    .white-space__not {
+        font-size: .85rem;
+    }
+
+}
